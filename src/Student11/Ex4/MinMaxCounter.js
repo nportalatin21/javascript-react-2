@@ -1,28 +1,43 @@
 import React from "react";
+import './Main.css'
 import { useState } from "react";
 
 export const MinMaxCounter = () => {
-  let [count, setCount] = useState(0);
+  let [counter, setCounter] = useState(0);
+  let [min, setMin] = useState(0);
+  let [max, setMax] = useState(0);
 
-  let onHandlePush = (direction) => {
-
+  const onHandleClick = (direction) => {
     if (direction === "Up") {
+      setCounter(++counter);
+      if (counter > max) {
+        setMax(counter);
+      }
+    } else {
+      setCounter(--counter);
 
-        setCount(++count)
-
+      if (counter < min) {
+        setMin(counter);
+      }
     }
-    else 
-        setCount(--count)
-  }
+ 
+  };
 
   return (
-    <div className="Count">
-      <button onClick={() => onHandlePush("Down") }>Down</button> {count}<span><button onClick={() => onHandlePush("Up") }>Up</button></span>
-      
-     
+    <div className="Main">
+        
+      <button onClick={() => onHandleClick("Down")}>Down</button>{counter}
+      <span>
+        
+        <button onClick={() => onHandleClick("Up")}>Up</button>
+      </span>
 
-      {/* <button onClick={() => onHandlePush("Up") }>Up</button> */}
-
+      <br />
+      <p>Min: {min}
+      <br />
+      <br/>
+      Max: {max}
+      </p>
     </div>
   );
 };
