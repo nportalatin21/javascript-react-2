@@ -7,3 +7,22 @@
 body {
     background-color: lightgray
 }
+
+.Main {
+
+    font-weight: bold;
+    
+}
+.Main p {
+
+    font-size: larger;
+}
+ .Main button {
+
+    color: black;
+    font-weight: bold;
+    background-image: linear-gradient(to right, rgb(0, 94, 255), pink ,rgb(128, 0, 96));
+    font-size: larger;
+    padding: 5px;
+    border-width: 5px;
+    margin: 2%; }
